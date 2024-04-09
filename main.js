@@ -642,3 +642,5 @@ console.log(".Array.from() : ", Array.from(text11));
 console.log(".Array.from() : ", txtArryFrm);
 
 /* Array Const OR Constant */
+
+let textt = "hello";
