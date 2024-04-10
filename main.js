@@ -600,7 +600,6 @@ const newNumber7 = numbers.every(myFunction7);
 console.log(".every() : ", newNumber6);
 console.log(".every() : ", newNumber7);
 
-
 //  .some()
 //  The .every() method check if all array values pass a test.
 //  The example check if some array values are larger than 18:
@@ -620,7 +619,6 @@ const newNumber9 = numbers.some(myFunction9);
 console.log(".some() : ", newNumber8);
 console.log(".some() : ", newNumber9);
 
-
 //  .find()
 //  The .find() method returns the value of the first array element that passes a test function.
 //  This example finds (returns the value of) the first element that is larger than 18:
@@ -632,15 +630,210 @@ function myFunction10(value) {
 const newNumber10 = numbers.find(myFunction10);
 console.log(".find() : ", newNumber10);
 
-
 //  Array.from()
-let text11 = 'ABCDEFG'
+//  The Array.from() method returns an Array object from any object with a length property or nay iterable object.
+
+let text11 = "ABCDEFG";
 let txtArryFrm = Array.from(text11);
 
-console.log(".Array.from() : ", Array.from('ABCDEFG'));
+console.log(".Array.from() : ", Array.from("ABCDEFG"));
 console.log(".Array.from() : ", Array.from(text11));
 console.log(".Array.from() : ", txtArryFrm);
 
 /* Array Const OR Constant */
+// An array declared with const cannot be reassigned:
 
-let textt = "hello";
+const cars4 = ["Saab", "Volvo", "BMW"];
+//cars4 = ["Toyota", "Volvo", "Audi"];    // ERROR this will give you an error
+console.log(cars4);
+
+//You can change the elements of a constant array:
+
+// You can create a constant array:
+const cars5 = ["Saab", "Volvo", "BMW"];
+
+// You can change an element:
+cars5[0] = "Toyota";
+
+// You can add an element:
+cars5.push("Audi");
+console.log(cars5);
+
+//This will not work:
+
+//const cars6;
+cars6 = ["Saab", "Volvo", "BMW"];
+
+//This is OK:
+
+var cars7;
+cars7 = ["Saab", "Volvo", "BMW"];
+console.log(cars7);
+
+//An array declared with const has Block Scope.
+
+//An array declared in a block is not the same as an array declared outside the block:
+
+const cars8 = ["Saab", "Volvo", "BMW"];
+// Here cars[0] is "Saab"
+console.log(cars8);
+
+{
+  const cars8 = ["Toyota", "Volvo", "BMW"];
+  // Here cars[0] is "Toyota"
+  console.log(cars8);
+}
+// Here cars[0] is "Saab"
+console.log(cars8);
+
+//An array declared with var does not have block scope:
+
+var cars9 = ["Saab", "Volvo", "BMW"];
+// Here cars[0] is "Saab"
+console.log("var : ", cars9);
+
+{
+  var cars9 = ["Toyota", "Volvo", "BMW"];
+  // Here cars[0] is "Toyota"
+  console.log("var : ", cars9);
+}
+// Here cars[0] is "Toyota"
+console.log("var : ", cars9);
+
+//Redeclaring an array declared with var is allowed anywhere in a program:
+
+var cars10 = ["Volvo", "BMW"]; // Allowed
+var cars10 = ["Toyota", "BMW"]; // Allowed
+cars10 = ["Volvo", "Saab"]; // Allowed
+console.log(cars10);
+
+//Redeclaring or reassigning an array to const, in the same scope, or in the same block, is not allowed:
+
+var cars11 = ["Volvo", "BMW"]; // Allowed
+// const cars11 = ["Volvo", "BMW"];   // Not allowed
+console.log(cars11);
+
+{
+  var cars11 = ["Volvo", "BMW"]; // Allowed
+  // const cars11 = ["Volvo", "BMW"]; // Not allowed
+  console.log(cars11);
+}
+
+//Redeclaring an array with const, in another scope, or in another block, is allowed:
+
+const cars12 = ["Volvo", "BMW"]; // Allowed
+console.log(cars12);
+
+{
+  const cars12 = ["Volvo", "BMW"]; // Allowed
+  console.log(cars12);
+}
+{
+  const cars12 = ["Volvo", "BMW"]; // Allowed
+  console.log(cars12);
+}
+
+/* Math Object */
+
+// Math.round()
+// Math.round(x) returns the nearest integer:
+
+console.log("Math.round() : ", Math.round(4.9));
+console.log("Math.round() : ", Math.round(4.7));
+console.log("Math.round() : ", Math.round(4.5));
+console.log("Math.round() : ", Math.round(4.4));
+console.log("Math.round() : ", Math.round(4.2));
+console.log("Math.round() : ", Math.round(-4.2));
+console.log("Math.round() : ", Math.round(-4.5));
+
+// Math.ceil()
+// Math.ceil(x) returns the value of x rounded up to its nearest integer:
+
+console.log("Math.ceil() : ", Math.ceil(4.9));
+console.log("Math.ceil() : ", Math.ceil(4.7));
+console.log("Math.ceil() : ", Math.ceil(4.5));
+console.log("Math.ceil() : ", Math.ceil(4.4));
+console.log("Math.ceil() : ", Math.ceil(4.2));
+console.log("Math.ceil() : ", Math.ceil(-4.2));
+console.log("Math.ceil() : ", Math.ceil(-4.5));
+
+// Math.floor()
+// Math.floor(x) returns the value of x rounded down to its nearest integer:
+
+console.log("Math.floor() : ", Math.floor(4.9));
+console.log("Math.floor() : ", Math.floor(4.7));
+console.log("Math.floor() : ", Math.floor(4.5));
+console.log("Math.floor() : ", Math.floor(4.4));
+console.log("Math.floor() : ", Math.floor(4.2));
+console.log("Math.floor() : ", Math.floor(-4.2));
+console.log("Math.floor() : ", Math.floor(-4.5));
+
+// Math.trunc()
+// Math.trunc(x) returns the integer part of x:
+
+console.log("Math.trunc() : ", Math.trunc(4.9));
+console.log("Math.trunc() : ", Math.trunc(4.7));
+console.log("Math.trunc() : ", Math.trunc(4.5));
+console.log("Math.trunc() : ", Math.trunc(4.4));
+console.log("Math.trunc() : ", Math.trunc(4.2));
+console.log("Math.trunc() : ", Math.trunc(-4.2));
+console.log("Math.trunc() : ", Math.trunc(-4.5));
+
+// Math.sign()
+// Math.sign(x) returns if x is negative, null or positive:
+
+console.log("Math.sign() : ", Math.sign(-4));
+console.log("Math.sign() : ", Math.sign(0));
+console.log("Math.sign() : ", Math.sign(4));
+
+// Math.pow()
+// Math.pow(x, y) returns the value of x to the power of y:
+
+console.log("Math.pow() : ", Math.pow(8, 2));
+console.log("Math.pow() : ", Math.pow(8, 3));
+console.log("Math.pow() : ", Math.pow(8, 4));
+console.log("Math.pow() : ", Math.pow(8, 5));
+
+// Math.sqrt()
+// Math.sqrt(x) returns the square root of x:
+
+console.log("Math.sqrt() : ", Math.sqrt(64));
+console.log("Math.sqrt() : ", Math.sqrt(100));
+console.log("Math.sqrt() : ", Math.sqrt(3));
+
+// Math.abs()
+// Math.abs(x) returns the absolute (positive) value of x:
+
+console.log("Math.abs() : ", Math.abs(-64));
+console.log("Math.abs() : ", Math.abs(-100));
+console.log("Math.abs() : ", Math.abs(-3));
+
+// Math.sin()
+// Math.sin(x) returns the sine (a value between -1 and 1) of the angle x (given in radians).
+
+console.log("Math.sin() : ", Math.sin((90 * Math.PI) / 180));
+
+// Math.min() and Math.max()
+// Math.min() and Math.max() can be used to find the lowest or highest value in a list of arguments:
+let numbers2 = (0, 150, 30, -8, -200);
+
+// Math.min()
+console.log("min : ", Math.min(0, 150, 30, -8, -200));
+console.log("min : ", Math.min(numbers2));
+
+// Math.max()
+console.log("max : ", Math.max(0, 150, 30, -8, -200));
+console.log("max : ", Math.max(numbers2));
+
+// Math.random()
+// Math.random(x) returns a random number between 0 (inclusive), and 1 (exclusive):
+
+console.log("Math.random() : ", Math.random());
+
+// Math.log()
+// Math.log(x) returns the natural logarithm of x:
+
+console.log("Math.log() : ", Math.log());
+
+
+
