@@ -539,12 +539,14 @@ function myFunction(value, index, array) {
 numbers.forEach(myFunction);
 
 //  .map()
-function myFunction2(value) {
-  return value * 2;
-}
+// function myFunction2(value) {
+//   if((value < 40)) {
+//     return value * 2;
+//   }
+// }
 
-const newNumber = numbers.map(myFunction2);
-console.log("map : ", newNumber);
+// const newNumber = numbers.map(myFunction2);
+// console.log("map : ", newNumber);
 
 //  .filter()
 function myFunction2(value) {
@@ -598,6 +600,7 @@ function myFunction7(value) {
 const newNumber7 = numbers.every(myFunction7);
 
 console.log(".every() : ", newNumber6);
+
 console.log(".every() : ", newNumber7);
 
 //  .some()
@@ -835,5 +838,55 @@ console.log("Math.random() : ", Math.random());
 
 console.log("Math.log() : ", Math.log());
 
+/* Solving Problem */
 
+// generating a number between 1 (included) to 6 (included)
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
+console.log(getRandomNumber(1, 6));
+
+// Sorting by Alpabatically
+const students = ["Saad", "Sumit", "Daiyan", "Akash"];
+console.log(students.sort());
+
+const roll_numbers = [3, 5, 1, 6, 2, 30];
+// Sorting the number's small to large
+console.log(
+  roll_numbers.sort(function (a, b) {
+    return a - b;
+  })
+);
+// Sorting the number's learge to small
+console.log(
+  roll_numbers.sort(function (a, b) {
+    return b - a;
+  })
+);
+
+/* Leapyear */
+// Leap year test
+function isLeapYear(year) {
+  if (year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0)) {
+    console.log(`${year} is a leap year!`);
+  } else {
+    console.log(`${year} is not a leap year`);
+  }
+}
+isLeapYear(2026);
+
+// Finding vowels on a sentence
+const vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+
+function countVowels(sentence) {
+  let count12 = 0;
+  const letters = Array.from(sentence);
+  letters.forEach(function (value) {
+    if (vowels.includes(value)) {
+      count12++;
+    }
+  });
+  return count12;
+}
+console.log(countVowels("I Love Bangladesh"));
