@@ -61,3 +61,27 @@ button {
   height: 100%;
   object-fit: cover;
 }
+.color-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.color-square {
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+.quiz-container {
+  margin-bottom: 20px;
+}
+
+.question {
+  margin-bottom: 10px;
+}
+
+.option {
+  margin-right: 10px;
+}
+
