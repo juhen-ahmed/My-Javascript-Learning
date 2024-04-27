@@ -170,3 +170,96 @@ const handleSubmit = () => {
 // Adding event listener to submit button
 const submitButton = document.getElementById('submit-button');
 submitButton.addEventListener('click', handleSubmit);
+
+
+// .filter()
+// Practice 1
+
+// Original array
+const numbers3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// Filtering only even numbers using .filter() method
+const evenNumbers = numbers3.filter(function(num) {
+  return num % 2 === 0;
+});
+
+console.log(evenNumbers); // Output: [2, 4, 6, 8, 10]
+
+
+// Practice 2
+
+
+function filterItems() {
+  const inputElement = document.getElementById('inputItems');
+  const items = inputElement.value.split(',').map(item => item.trim());
+  
+  // Filter items based on condition (e.g., items containing 'apple') using .filter()
+  const filteredItems = items.filter(function(item) {
+    return item.toLowerCase().includes('apple');
+  });
+  
+  // Display filtered items on the page
+  const resultElement = document.getElementById('result');
+  resultElement.innerHTML = '';
+  if (filteredItems.length === 0) {
+    resultElement.innerHTML = '<p>No items found matching the filter.</p>';
+  } else {
+    const itemList = document.createElement('ul');
+    filteredItems.forEach(function(item) {
+      const listItem = document.createElement('li');
+      listItem.textContent = item;
+      itemList.appendChild(listItem);
+    });
+    resultElement.appendChild(itemList);
+  }
+}
+
+
+// Practice 3
+
+const tasks = [];
+
+function addTask() {
+  const taskInput = document.getElementById('taskInput');
+  const taskText = taskInput.value.trim();
+  if (taskText !== '') {
+    tasks.push({ text: taskText, completed: false });
+    renderTasks();
+    taskInput.value = '';
+  }
+}
+
+function toggleTaskCompletion(index) {
+  tasks[index].completed = !tasks[index].completed;
+  renderTasks();
+}
+
+function filterTasks() {
+  const filterValue = document.getElementById('filter').value;
+  renderTasks(filterValue);
+}
+
+function renderTasks(filter = 'all') {
+  const taskList = document.getElementById('taskList');
+  taskList.innerHTML = '';
+
+  const filteredTasks = tasks.filter(task => {
+    if (filter === 'completed') {
+      return task.completed;
+    } else if (filter === 'incomplete') {
+      return !task.completed;
+    } else {
+      return true;
+    }
+  });
+
+  filteredTasks.forEach((task, index) => {
+    const listItem = document.createElement('li');
+    listItem.textContent = task.text;
+    if (task.completed) {
+      listItem.classList.add('completed');
+    }
+    listItem.addEventListener('click', () => toggleTaskCompletion(index));
+    taskList.appendChild(listItem);
+  });
+}

@@ -84,4 +84,41 @@ button {
 .option {
   margin-right: 10px;
 }
-
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #45a049;
+}
+#result {
+  margin-top: 20px;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+.completed {
+  text-decoration: line-through;
+}

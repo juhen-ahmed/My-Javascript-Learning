@@ -27,6 +27,29 @@
 
     <button id="submit-button">Submit</button>
 
+    <div class="container">
+      <h2>Filter Items</h2>
+      <input type="text" id="inputItems" placeholder="Enter items separated by commas">
+      <button onclick="filterItems()">Filter</button>
+      <div id="result"></div>
+    </div>
+
+
+
+    <div class="container">
+      <h2>To-Do List</h2>
+      <input type="text" id="taskInput" placeholder="Enter a new task">
+      <button onclick="addTask()">Add Task</button>
+      <div>
+        <label for="filter">Filter:</label>
+        <select id="filter" onchange="filterTasks()">
+          <option value="all">All</option>
+          <option value="completed">Completed</option>
+          <option value="incomplete">Incomplete</option>
+        </select>
+      </div>
+      <ul id="taskList"></ul>
+
     <script src="main.js"></script>
     <script src="testGpt.js"></script>
   </body>
