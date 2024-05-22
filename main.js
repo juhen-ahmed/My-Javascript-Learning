@@ -865,6 +865,15 @@ console.log(
   })
 );
 
+/* Random Number */
+// random number between min and max both are inclusive
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min +1) ) + min;
+}
+console.log("random number between min and max :", getRandomNumber(1, 6));
+
+
+
 /* Leapyear */
 // Leap year test
 function isLeapYear(year) {
@@ -877,7 +886,7 @@ function isLeapYear(year) {
 isLeapYear(2026);
 
 // Finding vowels on a sentence
-const vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+let vowels = Array.from("aeiouAEIOU");
 
 function countVowels(sentence) {
   let count12 = 0;
@@ -889,4 +898,15 @@ function countVowels(sentence) {
   });
   return count12;
 }
-console.log(countVowels("I Love Bangladesh"));
+console.log("countVowels", countVowels("I Love Bangladesh"));
+
+
+// how to find the duplicate number
+
+const numbers4 = [1, 4, 5, 5, 6, 7, 8, 9, 10, 4];
+
+const duplicates = numbers4.filter(function (value, index, array){
+  return array.indexOf(value) !== index;
+})
+
+console.log("duplicates", duplicates);

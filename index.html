@@ -1,56 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My java Learning</title>
-    <link rel="stylesheet" href="main.css" />
-  </head>
-  <body>
-    <p id="cars"></p>
-    <div id="Con1"></div>
-    <div id="btnContainer"></div>
 
-    <div id="thumbnails-container"></div>
-    <div id="full-image-container">
-      <img id="full-image" alt="Full Image">
-    </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My java Learning</title>
+  <link rel="stylesheet" href="main.css" />
+</head>
 
+<body>
+  <p id="cars"></p>
+  <div id="Con1"></div>
+  <div id="btnContainer"></div>
 
-    <div id="color-container" class="color-container">
-      <!-- Color squares will be added here -->
-    </div>
-
-    <div id="quiz-container" class="quiz-container">
-      <!-- Questions will be added here -->
-    </div>
-
-    <button id="submit-button">Submit</button>
-
-    <div class="container">
-      <h2>Filter Items</h2>
-      <input type="text" id="inputItems" placeholder="Enter items separated by commas">
-      <button onclick="filterItems()">Filter</button>
-      <div id="result"></div>
-    </div>
+  <div id="thumbnails-container"></div>
+  <div id="full-image-container">
+    <img id="full-image" alt="Full Image">
+  </div>
 
 
+  <div id="color-container" class="color-container">
+    <!-- Color squares will be added here -->
+  </div>
 
-    <div class="container">
-      <h2>To-Do List</h2>
-      <input type="text" id="taskInput" placeholder="Enter a new task">
-      <button onclick="addTask()">Add Task</button>
-      <div>
-        <label for="filter">Filter:</label>
-        <select id="filter" onchange="filterTasks()">
-          <option value="all">All</option>
-          <option value="completed">Completed</option>
-          <option value="incomplete">Incomplete</option>
-        </select>
-      </div>
-      <ul id="taskList"></ul>
+  <div id="quiz-container" class="quiz-container">
+    <!-- Questions will be added here -->
+  </div>
 
-    <script src="main.js"></script>
-    <script src="testGpt.js"></script>
-  </body>
+  <button id="submit-button">Submit</button>
+
+  <div class="container">
+    <h2>Filter Items</h2>
+    <input type="text" id="inputItems" placeholder="Enter items separated by commas">
+    <button onclick="filterItems()">Filter</button>
+    <div id="result"></div>
+  </div>
+
+
+
+  <div class="container">
+    <h2>To-Do List</h2>
+    <input type="text" id="taskInput" placeholder="Enter a new task">
+    <button onclick="addTask()">Add Task </button>
+    <label for="filter">Filter:</label>
+    <select id="filter" onchange="filterTasks()">
+      <option value="all">All</option>
+      <option value="completed">Completed</option>
+      <option value="incomplete">Incomplete</option>
+    </select>
+  </div>
+  <ul id="taskList"></ul>
+
+
+
+  <div id="task-list">
+    <ul id="tasks">
+        <li><input type="checkbox"> Task 1</li>
+        <li><input type="checkbox"> Task 2</li>
+        <li><input type="checkbox"> Task 3</li>
+        <li><input type="checkbox"> Task 4</li>
+    </ul>
+    <div id="status-message"></div>
+</div>
+
+
+  <script src="main.js"></script>
+  <script src="testGpt.js"></script>
+</body>
+
 </html>

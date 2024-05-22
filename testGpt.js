@@ -8,11 +8,11 @@ const path = ['https://www.red.com', 'https://www.greenStock.com', 'https://www.
 
 const container = document.getElementById('Con1');
 
-colors.forEach((color, index) => {
+colors.forEach((color, i) => {
   const box = document.createElement('a');
   box.textContent = color.toUpperCase();
   box.classList.add('box', color);
-  box.setAttribute('href',  path[index]); // Set the href to the corresponding URL
+  box.setAttribute('href', path[i]); // Set the href to the corresponding URL
   box.setAttribute('target', '_blank');
   container.appendChild(box);
 });
@@ -83,7 +83,7 @@ images.forEach((img, index) => {
 const celsiusTemperatures = [0, 15, 30, 45, 60];
 
 // Function to convert Celsius to Fahrenheit
-const celsiusToFahrenheit = (celsius) => (celsius * 9/5) + 32;
+const celsiusToFahrenheit = (celsius) => (celsius * 9 / 5) + 32;
 
 // Using map() to convert Celsius temperatures to Fahrenheit
 const fahrenheitTemperatures = celsiusTemperatures.map(celsiusToFahrenheit);
@@ -172,6 +172,40 @@ const submitButton = document.getElementById('submit-button');
 submitButton.addEventListener('click', handleSubmit);
 
 
+// Practice 3
+
+const items2 = [
+  { name: 'Bike', price: 100 },
+  { name: 'TV', price: 200 },
+  { name: 'Album', price: 10 },
+  { name: 'Book', price: 5 },
+  { name: 'Phone', price: 500 },
+  { name: 'Computer', price: 1000 },
+  { name: 'Keyboard', price: 25 }
+]
+
+const itemNames = items2.map((item) => {
+  return item.name;
+})
+console.log("map : ", itemNames);
+
+// Practice 4
+
+
+function myFunction11() {
+  const numbers5 = [45, 4, 8, 16, 25];
+  const numbers5_5 = numbers5.map((value) => {
+    return value * 2;
+  });
+
+  console.log("map : ", numbers5_5);
+
+}
+
+myFunction11();
+
+
+
 // .filter()
 // Practice 1
 
@@ -179,7 +213,7 @@ submitButton.addEventListener('click', handleSubmit);
 const numbers3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 // Filtering only even numbers using .filter() method
-const evenNumbers = numbers3.filter(function(num) {
+const evenNumbers = numbers3.filter(function (num) {
   return num % 2 === 0;
 });
 
@@ -192,12 +226,13 @@ console.log(evenNumbers); // Output: [2, 4, 6, 8, 10]
 function filterItems() {
   const inputElement = document.getElementById('inputItems');
   const items = inputElement.value.split(',').map(item => item.trim());
-  
+  let foods = ["banana", "apple", "orange", "coconut"];
+
   // Filter items based on condition (e.g., items containing 'apple') using .filter()
-  const filteredItems = items.filter(function(item) {
-    return item.toLowerCase().includes('apple');
+  const filteredItems = foods.filter(function (food) {
+    return food.toLowerCase().includes(items);
   });
-  
+
   // Display filtered items on the page
   const resultElement = document.getElementById('result');
   resultElement.innerHTML = '';
@@ -205,7 +240,7 @@ function filterItems() {
     resultElement.innerHTML = '<p>No items found matching the filter.</p>';
   } else {
     const itemList = document.createElement('ul');
-    filteredItems.forEach(function(item) {
+    filteredItems.forEach(function (item) {
       const listItem = document.createElement('li');
       listItem.textContent = item;
       itemList.appendChild(listItem);
@@ -253,6 +288,7 @@ function renderTasks(filter = 'all') {
     }
   });
 
+
   filteredTasks.forEach((task, index) => {
     const listItem = document.createElement('li');
     listItem.textContent = task.text;
@@ -263,3 +299,50 @@ function renderTasks(filter = 'all') {
     taskList.appendChild(listItem);
   });
 }
+
+
+// Practice 4
+
+const items = [
+  { name: 'Bike', price: 100 },
+  { name: 'TV', price: 200 },
+  { name: 'Album', price: 10 },
+  { name: 'Book', price: 5 },
+  { name: 'Phone', price: 500 },
+  { name: 'Computer', price: 1000 },
+  { name: 'Keyboard', price: 25 }
+]
+
+const filterItems2 = items.filter((item) => {
+  return item.price >= 100;
+})
+console.log("filter : ", filterItems2);
+
+
+
+// .some()
+// Practice 1
+
+document.addEventListener('DOMContentLoaded', function () {
+  const checkboxes = document.querySelectorAll('#tasks input[type="checkbox"]');
+  const statusMessage = document.getElementById('status-message');
+
+  function updateStatusMessage() {
+    const anyChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+    if (anyChecked) {
+      statusMessage.textContent = "You have completed tasks!";
+      statusMessage.style.color = "green";
+    } else {
+      statusMessage.textContent = "No tasks completed yet.";
+      statusMessage.style.color = "red";
+    }
+  }
+
+  checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', updateStatusMessage);
+  });
+
+  updateStatusMessage(); // Initial call to set status message on page load
+  updateStatusMessage(); // Initial call to set status message on page load
+});
+
