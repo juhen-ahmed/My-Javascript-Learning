@@ -222,7 +222,7 @@ console.log(evenNumbers); // Output: [2, 4, 6, 8, 10]
 
 // Practice 2
 
-
+const inputElement = document.getElementById('inputItems');
 function filterItems() {
   const inputElement = document.getElementById('inputItems');
   const items = inputElement.value.split(',').map(item => item.trim());
@@ -237,7 +237,7 @@ function filterItems() {
   const resultElement = document.getElementById('result');
   resultElement.innerHTML = '';
   if (filteredItems.length === 0) {
-    resultElement.innerHTML = '<p>No items found matching the filter.</p>';
+    resultElement.innerHTML = `<p>No items found matching the filter.</p>`;
   } else {
     const itemList = document.createElement('ul');
     filteredItems.forEach(function (item) {
@@ -247,7 +247,13 @@ function filterItems() {
     });
     resultElement.appendChild(itemList);
   }
-}
+};
+
+inputElement.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+    filterItems();
+  }
+})
 
 
 // Practice 3
