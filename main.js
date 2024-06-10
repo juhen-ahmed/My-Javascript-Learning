@@ -868,7 +868,7 @@ console.log(
 /* Random Number */
 // random number between min and max both are inclusive
 function getRandomNumber(min, max) {
-  return Math.floor(Math.random() * (max - min +1) ) + min;
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 console.log("random number between min and max :", getRandomNumber(1, 6));
 
@@ -888,9 +888,11 @@ isLeapYear(2026);
 // Finding vowels on a sentence
 let vowels = Array.from("aeiouAEIOU");
 
-function countVowels(sentence) {
+let paragraph = "I Love Bangladesh";
+function countVowels() {
   let count12 = 0;
-  const letters = Array.from(sentence);
+  let paragraph2 = paragraph;
+  const letters = Array.from(paragraph2);
   letters.forEach(function (value) {
     if (vowels.includes(value)) {
       count12++;
@@ -898,15 +900,222 @@ function countVowels(sentence) {
   });
   return count12;
 }
-console.log("countVowels", countVowels("I Love Bangladesh"));
+console.log("countVowels", countVowels());
 
 
-// how to find the duplicate number
+// This is how to find the duplicate number
 
 const numbers4 = [1, 4, 5, 5, 6, 7, 8, 9, 10, 4];
 
-const duplicates = numbers4.filter(function (value, index, array){
+const duplicates = numbers4.filter(function (value, index, array) {
   return array.indexOf(value) !== index;
 })
 
 console.log("duplicates", duplicates);
+
+
+// This is how to find the unique number
+
+const numbers5 = [1, 4, 5, 5, 6, 7, 8, 9, 10, 4];
+
+const duplicates2 = numbers5.filter(function (value, index, array) {
+  return array.indexOf(value) === index;
+})
+
+console.log("duplicates2", duplicates2);
+
+
+// for() Loop
+let cars13 = ['A', 'B', 'C', 'D', 'E', 'F'];
+
+for (i = 0; i < cars13.length; i++) {
+  console.log('for Loop : ', i);
+
+}
+console.log('Finished' + " " + 'for Loop');
+
+// other way of for() Loop
+
+let cars14 = ['A', 'B', 'C', 'D', 'E', 'F'];
+let j = 0;
+
+for (; ; j++) {
+  if (j < cars14.length) {
+    console.log("for Loop2 : ", j);
+  } else {
+    break;
+  }
+}
+console.log('Finished' + " " + 'for Loop2');
+
+// other way of for() Loop
+
+let cars15 = ['A', 'B', 'C', 'D', 'E', 'F'];
+let jj = 10;
+
+for (; ; jj--) {
+  if (jj == 0) {
+    break;
+  } else {
+    console.log("for Loop3 : ", jj);
+  }
+}
+console.log('Finished' + " " + 'for Loop3');
+
+
+
+//  for/in() Loop Looping in Object
+let person = { fname: "Juhen", lname: "Ahmed", age: 16 };
+for (let x in person) {
+  console.log('for/in Loop : ', person[x]); // now it return the value 
+}
+console.log('Finished' + " " + 'for/in Loop');
+
+//  for/in() Loop Looing in Array
+let numbers6 = [45, 4, 9, 16, 25];
+for (let number in numbers6) {
+  console.log('for/in Loop2 : ', numbers6[number]);
+}
+console.log('Finished' + " " + 'for/in Loop2');
+
+//  for/of() Loop 
+let a3 = "Sakib";
+for (x of a3) {
+  console.log('for/of Loop : ', x); // no need to write numbers7[number] cause  by default it returning the value
+}
+console.log('Finished' + " " + 'for/of Loop');
+
+//  for/of() Loop 
+let numbers7 = [45, 4, 9, 16, 25];
+for (number of numbers7) {
+  console.log('for/of Loop : ', number); // no need to write numbers7[number] cause  by default it returning the value 
+}
+console.log('Finished' + " " + 'for/of Loop2');
+
+//  Create a Set
+const mySet = new Set();
+
+// Add Values to the Set
+mySet.add('a');
+mySet.add('b');
+mySet.add('c');
+mySet.add('d');
+
+//  This is the other way to Add Values to the Set
+//  Create a Set
+const mySet2 = new Set();
+
+// Create Variables
+const a4 = "a";
+const b4 = "b";
+const c4 = "c";
+
+// Add Values to the Set
+mySet2.add(a4);
+mySet2.add(b4);
+mySet2.add(c4);
+mySet2.add(c4); // If you add equal elements, only the first element will be saved.
+
+// The break statement "jumps out" of a loop.
+let text12 = "";
+for (let i2 = 0; i2 < 10; i2++) {
+  if (i2 === 3) { break; }
+  text12 += "The number is " + i2;
+  console.log('break statement : ', i2);
+
+}
+
+// The continue statement "jumps over" one iteration in the loop
+let text13 = "";
+for (let i3 = 0; i3 < 10; i3++) {
+  if (i3 === 3) { continue; }
+  text13 += "The number is " + i3;
+  console.log('continue statement : ', i3);
+
+}
+
+// .entries()
+const fruits9 = new Map([
+  ["apple", 500],
+  ["bananas", 300],
+  ["oranges", 200],
+]);
+
+// List all entries 
+let text14 = '';
+for (let x of fruits9.entries()) {
+  text14 += x;
+  console.log("entries : ", x);
+}
+console.log("entries : ", text14);
+console.log("entries : End");
+
+// .toExponensial()
+// Returns a string, with a number rounded and written using exponential notation.
+
+let a5 = 10e6;
+console.log('.toExponensial() : ', a5.toExponential());
+
+// .toFixed()
+// Returns a string, with a number rounded and written with a specified number of decimals.
+
+let a6 = 10.5;
+console.log('.toFixed() : ', a6.toFixed());
+
+let a7 = 10.4;
+console.log('.toFixed() : ', a7.toFixed());
+
+// .toFixed()
+// Returns a string, with a number rounded and written with a specified number of decimals.
+
+let a8 = 10.375787;
+console.log('.toPrecision() : ', a8.toPrecision(3));
+console.log('.toPrecision() : ', a8.toPrecision(2));
+console.log('.toPrecision() : ', a8.toPrecision(5));
+
+// new Date()
+let d = new Date();
+let day = d.getDate(); // This returns the day of the month (1-31)
+let month = d.getMonth() + 1; // This returns the month (0-11), so we add 1
+let year = d.getFullYear(); // This returns the full year (e.g., 2024)
+
+console.log("Date: ", `${day}/${month}/${year}`);
+
+// try and catch throw
+// try and throw
+let x14 = 4;
+
+try {
+  if (x14 == "") {
+    throw "empty;"
+  }
+  if (isNaN(x14)) throw "not a number";
+  x14 = Number(x14);
+  if (x14 < 5) throw "too low";
+  if (x14 > 10) throw "too high";
+}
+catch (err) {
+  console.log("try, catch & throw : ", err);
+}
+
+
+// try and catch throw
+// try and throw
+let x15 = 13;
+
+try {
+  if (x15 == "") {
+    throw "empty;"
+  }
+  if (isNaN(x15)) throw "not a number";
+  x15 = Number(x15);
+  if (x15 < 5) throw "too low";
+  if (x15 > 10) throw {  // also we can make it an object
+    message: "Too High",
+    name: "HighError"
+  }
+}
+catch (err) {
+  console.log("try, catch & throw : ", err);
+}
+
